@@ -38,7 +38,8 @@ def move_embed(character, move):
     if 'Notes' in move and move['Notes'] and not move['Notes'] == "-":
         embed.add_field(name='Notes', value=move['Notes'])
     if 'Gif' in move and move['Gif'] and not move['Gif'] == "-":
-        embed.add_field(name='Gif', value=move['Gif'], inline=False)
+        url = 'https://thumbs.gfycat.com/' + move['Gif'][19:-4] + '-max-14mb.gif'
+        embed.set_image(url=url)
 
     random_value = randint(0, 10)
     # every 10th time
